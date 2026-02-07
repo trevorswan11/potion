@@ -4,3 +4,10 @@ zig-out/
 
 .zed
 .DS_Store
+
+__cmake**
+.cache
+build
+
+managed_components/
+sdkconfig
