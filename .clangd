@@ -1,5 +1,7 @@
 CompileFlags:
     CompilationDatabase: "build"
+    Add:
+        - "-D__block="
     Remove:
         - "-mlongcalls"
         - "-fno-shrink-wrap"
