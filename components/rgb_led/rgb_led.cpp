@@ -1,5 +1,8 @@
-#include "rgb_led.hpp"
 #include <algorithm>
+#include <iomanip>
+#include <sstream>
+
+#include "rgb_led.hpp"
 
 namespace dev {
 
@@ -35,6 +38,17 @@ auto RGBLed::update(uint32_t hex, float scale) -> void {
     const uint8_t g       = hex >> 8;
     const uint8_t b       = hex;
     update(r * clamped, g * clamped, b * clamped);
+}
+
+auto RGBLed::to_string() const -> std::string {
+    uint32_t hex_code = 0;
+    hex_code |= red_.value << 16;
+    hex_code |= green_.value << 8;
+    hex_code |= blue_.value;
+
+    std::stringstream ss;
+    ss << "0x" << std::setfill('0') << std::setw(6) << std::hex << std::uppercase << hex_code;
+    return ss.str();
 }
 
 } // namespace dev

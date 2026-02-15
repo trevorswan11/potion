@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 #include "pins.hpp"
 
 namespace dev {
@@ -20,6 +22,8 @@ class RGBLed {
     auto update(uint8_t r, uint8_t g, uint8_t b) -> void;
     auto update(uint32_t hex) -> void;
     auto update(uint32_t hex, float scale) -> void;
+
+    auto to_string() const -> std::string;
 
   private:
     RGBChannel red_;

@@ -6,9 +6,9 @@ namespace dev {
 
 class Potentiometer {
   public:
-    explicit Potentiometer(Pin pin);
+    explicit Potentiometer(Pin pin) : pin_{pin} {}
 
-    [[nodiscard]] auto read() -> int;
+    [[nodiscard]] auto read() -> int { return pin_.read(); }
     [[nodiscard]] auto max_value() -> int { return pin_.get_range(); }
 
   private:
