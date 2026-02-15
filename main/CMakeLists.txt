@@ -3,6 +3,7 @@ set(DEPS pthread driver)
 idf_component_register(SRCS "potion.cpp"
     INCLUDE_DIRS "."
     PRIV_REQUIRES "${DEPS}"
+    REQUIRES lcd potentiometer touch rgb_led pins
 )
 
 set(IMPLICIT_C_INC "$<JOIN:${CMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES},;>")

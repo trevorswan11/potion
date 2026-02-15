@@ -1,5 +1,5 @@
 idf_component_register(
-    SRCS "touch.cpp"
+    SRCS "rgb_led.cpp"
     INCLUDE_DIRS "include"
     REQUIRES pins
 )

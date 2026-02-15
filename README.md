@@ -1,2 +1,2 @@
 # potion
-A raspberry pi pico motion detector
+A motion detector for ESP32
